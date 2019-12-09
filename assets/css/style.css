@@ -87,8 +87,8 @@ section::after {
 }
 
 .project-image {
-    height: 250px;
-    width: 300px;
+    height: 200px;
+    width: 250px;
     border-radius:10px;
     box-shadow: grey 5px 5px 5px;
 }
@@ -144,10 +144,6 @@ footer {
         justify-content: center;
     }
 
-    .navbar-nav {
-        padding: 0;
-    }
-
     .nav-item {
         padding-bottom: 0;
         padding-top: 0;
@@ -157,5 +153,10 @@ footer {
         float: none;
         width: 100%;
         margin: 0 0 16px 0;
+    }
+
+    .project-image {
+        height: 100%;
+        width: 100%;
     }
 }
