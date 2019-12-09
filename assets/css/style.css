@@ -1,23 +1,21 @@
 body {
-    min-height:100vh;
- }
+    min-height: 100vh;
+    background-image: url('/assets/images/embossed-diamond.png');
+    color: #666666;
+}
 
- body {
-     background-image: url('/assets/images/embossed-diamond.png');
-     color: #666666;
- }
-
- header {
-     width: 100%;
-     background-color: #fff;
- }
+header {
+    width: 100%;
+    background-color: #fff;
+}
 
 section {
     max-width: 760px;
     background-color: #fff;
     border: 1px solid #dddddd;
     box-sizing: border-box;
-    padding: 24px 32px 24px 32px;
+    margin: 0;
+    padding: 24px 32px;
 }
 
 section::after {
@@ -26,8 +24,8 @@ section::after {
     display: block;
 }
 
- h1 {
-    color:#4aaaa5;
+h1 {
+    color: #4aaaa5;
     font-family: 'Georgia', Times, 'Times New Roman', serif;
     font-size: 32px;
     padding-bottom: 16px;
@@ -36,7 +34,7 @@ section::after {
 }
 
 .navbar-brand.h1 {
-    background-color:#4aaaa5;
+    background-color: #4aaaa5;
     font-family: 'Georgia', Times, 'Times New Roman', serif;
     color: white;
     display: inline-block;
@@ -87,9 +85,8 @@ section::after {
 }
 
 .project-image {
-    height: 200px;
     width: 250px;
-    border-radius:10px;
+    border-radius: 10px;
     box-shadow: grey 5px 5px 5px;
 }
 
@@ -117,56 +114,67 @@ footer {
     flex-shrink: 0;
 }
 
+/* Form */
+
 .btn-info {
     background-color: #4aaaa5;
 }
 
-/*
- *========================================
+/****************************************
  * MEDIA QUERIES
- *========================================
- */
+ ****************************************/
 
-/* When screen is 768px or less */
-@media screen and (max-width: 768px) {
+/*
+ * 768px or less 
+ * Set content to 95% 
+ * re
+ */
+@media screen and (max-width: 767px) {
     section {
         width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
     }
-
-    .project-image {
-        height: 100%;
-        width: 100%;
+}
+/* 655 to 767 px 
+ * Manually set the left margin for the navbar to maintain consistency with 
+ * content container prior to stacking (see below).
+ */
+@media screen and (min-width:655px) and (max-width: 767px) {
+    .navbar-expand-md {
+        margin-left: 15px;
     }
 }
 
-/* When screen is 650px or less */
-@media screen and (max-width: 600px) {
-    section {
-        width: 100%;
-    }
-
-    .navbar-brand, 
-    .navbar-nav {
+/* 654px or less (when portfolio gallery no longer holds 2 images per line)
+ * Stack navbar-brand and nav links
+ * Resize images
+ */
+@media screen and (max-width: 654px) {
+    .navbar-brand, .navbar-nav {
         width: 100%;
         text-align: center;
         justify-content: center;
     }
-
     .nav-item {
         padding-bottom: 0;
         padding-top: 0;
     }
-
     .profile-image {
         float: none;
         width: 100%;
         margin: 0 0 16px 0;
     }
-
     .project-image {
         height: 100%;
+        width: 100%;
+    }
+}
+
+/* 576px or less (XS)
+ * Remove content margins 
+ */
+@media screen and (max-width: 576px) {
+    section {
         width: 100%;
     }
 }
