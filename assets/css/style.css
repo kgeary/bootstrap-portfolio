@@ -1,4 +1,4 @@
-body, wrapper {
+body {
     min-height:100vh;
  }
 
@@ -138,7 +138,8 @@ footer {
 
 /* When screen is 650px or less */
 @media screen and (max-width: 650px) {
-    .navbar-brand, .navbar-nav {
+    .navbar-brand, 
+    .navbar-nav {
         width: 100%;
         text-align: center;
         justify-content: center;
@@ -147,6 +148,7 @@ footer {
     .nav-item {
         padding-bottom: 0;
         padding-top: 0;
+        
     }
 
     .profile-image {
