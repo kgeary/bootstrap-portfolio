@@ -13,6 +13,7 @@ body, wrapper {
  }
 
 section {
+    max-width: 760px;
     background-color: #fff;
     border: 1px solid #dddddd;
     box-sizing: border-box;
@@ -135,8 +136,8 @@ footer {
     }
 }
 
-/* When screen is 640px or less */
-@media screen and (max-width: 640px) {
+/* When screen is 650px or less */
+@media screen and (max-width: 650px) {
     .navbar-brand, .navbar-nav {
         width: 100%;
         text-align: center;
@@ -145,6 +146,11 @@ footer {
 
     .navbar-nav {
         padding: 0;
+    }
+
+    .nav-item {
+        padding-bottom: 0;
+        padding-top: 0;
     }
 
     .profile-image {
