@@ -9,6 +9,8 @@ A redesign of my original portfolio using Bootstrap 4 and responsive design.
 # New Features
 * Responsive navbar
 * Responsive images
-* mobile-ready
+* Mobile-ready
 
+# Visit the page
+[Bootstrap Portfolio @ kgeary.github.io](https://kgeary.github.io/bootstrap-portfolio/)
 
