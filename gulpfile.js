@@ -10,12 +10,13 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
-
+var rename = require('gulp-rename');
 
 // File paths
 const files = { 
-    scssPath: 'app/scss/**/*.scss',
-    jsPath: 'app/js/**/*.js'
+    scssPath: ['app/scss/**/*.scss'],
+    jsPath: ['app/js/**/*.js', '!app/js/**/+(all|all.min).js'],
+    htmlPath: ['app/**/*.html'],
 }
 
 // Sass task: compiles the style.scss file into style.css
@@ -23,36 +24,37 @@ function scssTask(){
   return src(files.scssPath)
       .pipe(sourcemaps.init()) // initialize sourcemaps first
       .pipe(sass()) // compile SCSS to CSS
+      .pipe(dest('app/css')) // Save the un-minified version
+      .pipe(rename((path) => { path.basename += ".min"; }))
       .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
-      .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-      .pipe(dest('dist')
+      .pipe(sourcemaps.write('./maps')) // write sourcemaps file css
+      .pipe(dest('app/css')
   ); // put final CSS in dist folder
 }
 
 // JS task: concatenates and uglifies JS files to script.js
 function jsTask(){
-  return src([
-      files.jsPath
-      //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
-      ])
+  return src(files.jsPath)
       .pipe(concat('all.js'))
+      .pipe(dest('app/js'))
+      .pipe(rename((path) => { path.basename += ".min"; }))
       .pipe(uglify())
-      .pipe(dest('dist')
+      .pipe(dest('app/js')
   );
 }
 
 // Cachebust
 var cbString = new Date().getTime();
 function cacheBustTask(){
-  return src(['index.html'])
+  return src(files.htmlPath)
       .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
-      .pipe(dest('.'));
+      .pipe(dest('app'));
 }
 
 // Watch task: watch SCSS and JS files for changes
 // If any change, run scss and js tasks simultaneously
 function watchTask(){
-  watch([files.scssPath, files.jsPath], 
+  watch([...files.scssPath, ...files.jsPath], 
       series(
           parallel(scssTask, jsTask),
           cacheBustTask
