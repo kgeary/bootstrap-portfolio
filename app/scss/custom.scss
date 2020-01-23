@@ -1,6 +1,24 @@
 // Variable overrides - must come before @imports
-$body-bg: rgb(118, 168, 224);
-$body-color: whitesmoke;
+$color1: #C9E4CA; // Tea Green
+$color2: #2E1760; // Russian Violet
+$color3: #E0FBFC; // Light Cyan
+$color4: #98C1D9; // Pale Cerulean
+$color5: #5C6B73; // Cadet
+
+$body-bg: $color3;
+$body-color: $color2;
+
+$header-bg: $color5;
+$header-color: $color4;
+
+$section-bg: $color4;
+$section-color: $body-color;
+
+$link-color: $color1;
+$link-hover: $color4;
+
+$footer-bg: $header-bg;
+$footer-color: $header-color;
 
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
@@ -16,19 +34,22 @@ $body-color: whitesmoke;
 
 body {
   min-height: 100vh;
-  background-image: url('/assets/images/embossed-diamond.png');
-  color: #666666;
+  background-color: $body-bg;
+  color: $body-color;
 }
 
 header {
   width: 100%;
-  background-color: #fff;
+  background-color: $header-bg;
+  color: $header-color;
 }
 
 section {
   max-width: 760px;
-  background-color: #fff;
-  border: 1px solid #dddddd;
+  background-color: $section-bg;
+  color: $section-color;
+  border: 1px solid $color2;
+  border-radius: 10px;
   box-sizing: border-box;
   margin: 0;
   padding: 24px 32px;
@@ -41,18 +62,14 @@ section::after {
 }
 
 h1 {
-  color: #4aaaa5;
-  font-family: 'Georgia', Times, 'Times New Roman', serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 32px;
   padding-bottom: 16px;
-  margin-bottom: 32px;
-  border-bottom: 2px solid #cccccc;
+  // margin-bottom: 32px;
+  // border-bottom: 2px solid $color2;
 }
 
 .navbar-brand.h1 {
-  background-color: #4aaaa5;
-  font-family: 'Georgia', Times, 'Times New Roman', serif;
-  color: white;
   display: inline-block;
   padding: 12px 32px;
   margin: 0;
@@ -60,7 +77,7 @@ h1 {
 }
 
 .navbar-brand.h1:hover {
-  color: white;
+  color: $color1;
 }
 
 .nav-item {
@@ -69,11 +86,11 @@ h1 {
 }
 
 .nav-link {
-  color: #777777;
+  color: $link-color;
 }
 
 .nav-link:hover {
-  color: #4aaaa5;
+  color: $link-hover;
 }
 
 /* Profile Image */
@@ -107,8 +124,8 @@ h1 {
 }
 
 .project-title {
-  background-color: #4aaaa5;
-  color: #ffffff;
+  background-color: $color5;
+  color: $color1;
   width: 100%;
   position: absolute;
   bottom: 16px;
@@ -121,11 +138,11 @@ h1 {
 /* Footer Content */
 
 footer {
-  background-color: #666666;
-  color: #cccccc;
+  background-color: $footer-bg;
+  color: $footer-color; 
   width: 100%;
   text-align: center;
-  border-top: 8px solid #4aaaa5;
+  border-top: 8px solid $body-bg;
   padding-top: 12px;
   flex-shrink: 0;
 }
@@ -133,7 +150,7 @@ footer {
 /* Form */
 
 .btn-info {
-  background-color: #4aaaa5;
+  background-color: $color2;
 }
 
 /****************************************

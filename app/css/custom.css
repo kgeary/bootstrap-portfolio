@@ -18,9 +18,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: whitesmoke;
+  color: #2E1760;
   text-align: left;
-  background-color: #76a8e0; }
+  background-color: #E0FBFC; }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important; }
@@ -94,11 +94,11 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: #C9E4CA;
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #0056b3;
+    color: #96cb98;
     text-decoration: underline; }
 
 a:not([href]) {
@@ -356,7 +356,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #76a8e0;
+  background-color: #E0FBFC;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -1105,17 +1105,20 @@ pre {
 
 body {
   min-height: 100vh;
-  background-image: url("/assets/images/embossed-diamond.png");
-  color: #666666; }
+  background-color: #E0FBFC;
+  color: #2E1760; }
 
 header {
   width: 100%;
-  background-color: #fff; }
+  background-color: #5C6B73;
+  color: #98C1D9; }
 
 section {
   max-width: 760px;
-  background-color: #fff;
-  border: 1px solid #dddddd;
+  background-color: #98C1D9;
+  color: #2E1760;
+  border: 1px solid #2E1760;
+  border-radius: 10px;
   box-sizing: border-box;
   margin: 0;
   padding: 24px 32px; }
@@ -1126,34 +1129,28 @@ section::after {
   display: block; }
 
 h1 {
-  color: #4aaaa5;
-  font-family: 'Georgia', Times, 'Times New Roman', serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 32px;
-  padding-bottom: 16px;
-  margin-bottom: 32px;
-  border-bottom: 2px solid #cccccc; }
+  padding-bottom: 16px; }
 
 .navbar-brand.h1 {
-  background-color: #4aaaa5;
-  font-family: 'Georgia', Times, 'Times New Roman', serif;
-  color: white;
   display: inline-block;
   padding: 12px 32px;
   margin: 0;
   font-size: 32px; }
 
 .navbar-brand.h1:hover {
-  color: white; }
+  color: #C9E4CA; }
 
 .nav-item {
   margin: 0;
   padding: 1em; }
 
 .nav-link {
-  color: #777777; }
+  color: #C9E4CA; }
 
 .nav-link:hover {
-  color: #4aaaa5; }
+  color: #98C1D9; }
 
 /* Profile Image */
 .profile-image {
@@ -1180,8 +1177,8 @@ h1 {
   box-shadow: grey 5px 5px 5px; }
 
 .project-title {
-  background-color: #4aaaa5;
-  color: #ffffff;
+  background-color: #5C6B73;
+  color: #C9E4CA;
   width: 100%;
   position: absolute;
   bottom: 16px;
@@ -1192,17 +1189,17 @@ h1 {
 
 /* Footer Content */
 footer {
-  background-color: #666666;
-  color: #cccccc;
+  background-color: #5C6B73;
+  color: #98C1D9;
   width: 100%;
   text-align: center;
-  border-top: 8px solid #4aaaa5;
+  border-top: 8px solid #E0FBFC;
   padding-top: 12px;
   flex-shrink: 0; }
 
 /* Form */
 .btn-info {
-  background-color: #4aaaa5; }
+  background-color: #2E1760; }
 
 /****************************************
 * MEDIA QUERIES
