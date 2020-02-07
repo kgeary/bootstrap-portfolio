@@ -1114,7 +1114,6 @@ header {
   color: #98C1D9; }
 
 section {
-  max-width: 760px;
   background-color: #98C1D9;
   color: #2E1760;
   border: 1px solid #2E1760;
@@ -1186,6 +1185,11 @@ h1 {
   box-sizing: border-box;
   padding: 16px;
   opacity: 0.95; }
+
+.project-title:hover {
+  background-color: #C9E4CA;
+  color: #2E1760;
+  opacity: 0.75; }
 
 /* Footer Content */
 footer {
